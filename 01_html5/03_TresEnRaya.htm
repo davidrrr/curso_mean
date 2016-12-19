@@ -1,0 +1,55 @@
+<!DOCTYPE html> 
+<html lang="es"> 
+	<head> 
+	<meta charset="UTF-8"> 
+ 		<title> Juego Tres En Raya</title>
+		<style>
+			 body { background-color:orange;}
+			 h1, h2 {text-align:center;}
+			 #tablero{width:310px;height:310px; padding:0px; border: 7px solid #999; background-color:white; margin: 20px auto; cursor:pointer;}
+			 #tablero div{width:100px;height:100px;float:left; margin:0px; font-size: 90px; text-align:center;}
+			 #celda1,#celda2,#celda3,#celda4,#celda5,#celda6 {border-bottom: 5px solid black;}
+			 #celda1,#celda2,#celda4,#celda5,#celda7,#celda8 {border-right: 5px solid black;}
+			 #tablero > td:hover {background-color:#ddd;}
+			 #consola {width:310px;height:30px; padding:7px; border: 5px solid #999; background-color:white; margin: 10px auto; text-align:center; color:darkgreen;}
+		</style>
+ 	</head>
+	
+ 	<body> 
+ 		<p><h1> Juego Tres en Raya </h1></p> 
+		</br>
+		<table id="tablero" border="1">
+			<tr> 
+				<td id="celda1" celda="0" class="celda"> </td>
+				<td id="celda2" celda="1" class="celda"> </td>
+				<td id="celda3" celda="2" class="celda"> </td>
+			</tr>
+			<tr> 
+				<td id="celda4" celda="3" class="celda"> </td>
+				<td id="celda5" celda="4" class="celda"> </td>
+				<td id="celda6" celda="5" class="celda"> </td>
+			</tr>
+			<tr> 
+				<td id="celda7" celda="6" class="celda"> </td>
+				<td id="celda8" celda="7" class="celda"> </td>
+				<td id="celda9" celda="8" class="celda"> </td>
+			</tr>			
+		</table>
+		</br>
+		</br>
+		<h2> Clasificación </h2>
+		<table id="consola">
+			<tr>
+				<td> Jugador 1 </td>
+				<td> Jugador 2 </td>
+			</tr>
+			<tr>
+				<td>  </td>
+				<td>  </td>
+			</tr>
+		</table>
+ 		
+	</body> 
+</html> 
+
+ 
