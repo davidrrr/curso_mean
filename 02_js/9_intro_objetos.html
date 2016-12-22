@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title> Intro Objetos </title>
+	</head>
+	<body></body>
+	<script>
+		var numero= prompt("Dime Numero de alumnos: ");
+		numero= parseInt(numero);
+		
+		var alumnos= new Array();
+		
+		for(var i=0; i<numero; i++){
+			var nombre=prompt("Nombre alumno "+i);
+			var fecha=prompt("Fecha nacimiento DD-MM-AA: "+i);
+			
+			var nuevoAlumno=new Object();
+			nuevoAlumno.nombre=nombre;
+			var infoFecha=fecha.split("-");
+			nuevoAlumno.fecha= new Date(
+				parseInt(infoFecha[0]),
+				parseInt(infoFecha[1]),
+				parseInt(infoFecha[2]));
+			
+			alert("Nombre: "+ nuevoAlumno.nombre
+				+ "Fecha: "+ nuevoAlumno.fecha);
+			// alumnos.push(nuevoAlumno);
+			alumnos[i]=nuevoAlumno;
+		}
+		
+		document.write("<table>");
+		
+		
+		/*
+		var objetoUno= new Object();
+		objetoUno.nombre="Cadena de texto";
+		objetoUno.lista=
+		*/
+	</script>
+</html>

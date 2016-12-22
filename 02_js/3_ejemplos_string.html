@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>Mi primera página</title>
+	</head>
+	<body></body>
+<script>
+
+var cadena = "Ponemos cualquier texto.";
+
+console.log("Longitud: " + cadena.length);                           //Longitud: 24
+
+console.log("Mayúsculas: " + cadena.toUpperCase() );                 //May?sculas: PONEMOS CUALQUIER TEXTO.
+console.log("Minúsculas: " + cadena.toLowerCase() );                 //Min?sculas: ponemos cualquier texto.
+
+console.log("Caracter 4: " + cadena.charAt(4) );                     //Caracter 4: m
+console.log("Caracter 4: " + cadena[4] ); // Lo mismo que la anterior //Caracter 4: m
+
+console.log("Index of \"t\": " + cadena.indexOf("t") );              //Index of "t": 18
+console.log("Index of \"t\": " + cadena.lastIndexOf("t") );          //Index of "t": 21
+
+console.log("substring 9: " + cadena.substring(9) );                 //substring 9: ualquier texto.
+console.log("substring 9, 4: " + cadena.substring(9, 4) );           //substring 9, 4: mos c
+
+var arrarDeCadena = cadena.split(" ");
+
+console.log("****** EMPEZANDO CON ARRAYS  *******");                 
+console.log("palabra 2da: " + arrarDeCadena[1] );                    //palabra 2da: cualquier
+console.log("palabra 6ta: " + typeof arrarDeCadena[6] );             //palabra 6ta: undefined
+arrarDeCadena[6] = 83;
+console.log("elemento 1 " + typeof arrarDeCadena[1] );               //elemento 1 string
+console.log("elemento 6: " + typeof arrarDeCadena[6] );              //elemento 6: number
+
+console.log("Pop elemento 6: " + arrarDeCadena.pop() );              //Pop elemento 6: 83
+console.log("Pop elemento 6 después: " + typeof arrarDeCadena[6] );  //Pop elemento 6 despu?s: undefined
+
+arrarDeCadena.push("OTRO");
+arrarDeCadena.push(7);
+arrarDeCadena.push(false);
+arrarDeCadena[18] = 83;
+arrarDeCadena = ["jkh kj", 898,false];
+
+console.log("Todo el array: " + arrarDeCadena.join(",") );           //Todo el array: jkh kj,898,false
+
+var otraCadena = arrarDeCadena.join("*");
+console.log("Union otraCadena : " + otraCadena );                    //Union otraCadena : jkh kj*898*false
+
+
+</script>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>Mi primera página</title>
+	</head>
+	<body></body>
+<script>
+
+mi_funcion();
+	
+function mi_funcion() {
+	var unaVariable = "Variable local";
+	var i = 0;
+	do {
+		//var otra = "otra";
+		otra = "otra";
+		console.log("Valor de i : " + i);          //Valor de i : 0
+		i++;
+	} while ( i < 0);
+	console.log("Valor de i al final: " + i);	   //Valor de i al final: 1
+	console.log("Otra: " + otra);                  //Otra: otra
+}	
+console.log("Otra fuera: " + otra);                //Otra fuera: otra
+
+var fecha = new Date();
+fecha.setFullYear(1989);
+console.log("Fecha: " + fecha); 
+
+
+</script>
+</html>

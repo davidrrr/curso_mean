@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>Mi primera página</title>
+	</head>
+	<body></body>
+	<script>
+		var variableDeclarada = null;
+		var variableGlobal = null;
+		var booleano = true;
+		var variableNumerica = 7.6667;
+		var variableCadena = "Una cadena de caracteres";
+	// Tipos
+		console.log(typeof variableNoDec);        //undefined
+		console.log(typeof variableDeclarada);    //object
+		console.log(typeof booleano);	          //boolean
+		console.log(typeof variableNumerica);	  //number
+		console.log(typeof variableCadena);		  //string
+		console.log(typeof (true && true));       //boolean
+	/* Valores */
+		//console.log(variableNoDec);             //No existe no continua da error
+		console.log(variableDeclarada);		      //null
+		console.log(booleano);		              //true
+		console.log((true && true));              //true
+		console.log(typeof variableNumerica);     //number
+		console.log(variableNumerica);            //7.6667
+		console.log(variableNumerica.toFixed());  //8
+		console.log(typeof variableNumerica);	  //number
+		console.log(variableNumerica.toFixed());  //8
+		console.log(typeof variableNumerica);     //number
+		
+		console.log(variableCadena);	          //Una cadena de caracteres
+		console.log("Concatenacion: " + variableCadena           
+				+", "+ variableDeclarada + ", " + booleano 
+				+ ", " + (10 / 0)  );                         //Concatenacion: Una cadena de caracteres, null, true, Infinity
+		console.log(isNaN(variableNumerica));                 //false
+		console.log(isNaN(variableCadena));                   //true
+		
+		console.log("Texto 1  \n Texto 2 \t\t texto tabulado");  
+		console.log("MUCHAS COMILLAS:\"\"\'\'\' \\ \\ \\");
+	</script>
+</html>
