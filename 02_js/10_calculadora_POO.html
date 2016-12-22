@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>Calculadora</title>
+	</head>
+	<body>
+		<form name="calc">
+			Operando 1 <input name="operando1" value="0" size="12"
+				maxlength="12" type="text">
+			<br>
+			Operando 2 <input name="operando2" value="0" size="12"
+				maxlength="12" type="text">
+			<br>
+			<input name="" value=" + "
+				onclick="suma()" type="button">
+			<input name="" value=" - "
+				onclick="resta()" type="button">
+			<input name="" value=" * "
+				onclick="multi()" type="button">
+			<input name="" value=" / "
+				onclick="divi()" type="button">
+			<br>
+			Resultado <input name="resultado" value="0" size="12" type="text">
+		</form>
+		<div id='texto'>Operaciones realizadas:<br></div>
+	</body>
+<script>
+	//eval("alert('Resultado op' + calcula('*'))");
+	
+	var op1=0, op2=0, result=0;
+	
+	
+	function recibeOp () {
+		op1 = document.calc.operando1.value;
+		op2 = document.calc.operando2.value;	
+	}
+	
+	function suma() {
+		recibeOp();
+		result= op1+op2;
+		document.calc.resultado.value = result;
+		document.getElementById("texto").innerHTML += ("<br>" + op1 + "+" + op2 + "<br>");
+	}
+	
+	function resta() {
+		recibeOp();
+		result= op1-op2;
+		document.calc.resultado.value = result;
+		document.getElementById("texto").innerHTML += ("<br>" + op1 + "-" + op2 + "<br>");
+	}
+	
+	function multi() {
+		recibeOp();
+		result=op1*op2;
+		document.calc.resultado.value = result;
+		document.getElementById("texto").innerHTML += ("<br>" + op1 + "*" + op2 + "<br>");
+	}
+	
+	function divi() {
+		recibeOp();
+		result= op1/op2;
+		document.calc.resultado.value = result;
+		document.getElementById("texto").innerHTML += ("<br>" + op1 + "\\" + op2 + "<br>");
+	}
+	
+	function calculadora (operando) {
+		var oper_1 = document.calc.operando1.value;
+		var oper_2 = document.calc.operando2.value;
+		
+		//var result = eval (oper_1 + operando + oper_2);
+		
+		var result = eval (oper_1 + operando + oper_2);
+		
+		document.getElementById("texto").innerHTML += ("<br>" + oper_1 + operando + oper_2 + "<br>");
+		
+		document.calc.resultado.value = result;
+		console.log("Log");
+		console.warn("warn");
+		console.error("error");
+	}
+</script>
+</html>
+
+
