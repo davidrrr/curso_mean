@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Ejemplo de funcionamiento de Callbacks en Javascript</title>
+
+    <script type="text/javascript">
+        function area(){
+			var ancho=Number(document.getElementById('ancho').value);
+			var alto=Number(document.getElementById('alto').value);
+			var result=Number(document.getElementById('resultado'));
+			result.value = eval(ancho*alto);
+            return (ancho*alto);
+        }
+		
+        
+    </script>
+    </head>
+    <body>
+    <!-- Similar a calculadora, un objeto Rectangulo, que tenga 3 inputs, 2 de entrada(ancho y alto) y el resultado,
+		y un único metodo calcular area que lo realice alpulsar un boton llamado "AREA". 
+		<div id="resultado"></div>
+    -->
+        <input type="number" id="ancho"> Ancho </input> <br/>
+		<input type="number" id="alto"> Alto </input> <br/>
+		
+        <button onclick="area()"> AREA </button> <br/>
+		<input type="number" id="resultado"> Resultado </input> <br/>
+        
+    </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Ejemplo de funcionamiento de Callbacks en Javascript</title>
+
+    <script type="text/javascript">
+        function sumaDos(numero, callback){
+            return callback(numero);
+        }
+
+        function callback(num){
+                return (num+2);
+        }
+		
+		function porDos(numero){
+            document.getElementById("resultado").innerHTML = numero*2;
+        }
+
+        function cuenta(){
+            var numero=Number(document.getElementById('numero').value);
+            sumaDos(numero,porDos);
+        }
+		
+        function cuentasincallback(){
+            var numero=Number(document.getElementById('numero').value);
+			var n=sumaDosSinCallback(numero);
+            porDos(n);
+        }
+    </script>
+    </head>
+    <body>
+    <!--Ejemplo sencillo de uso de callbacks... El codigo es mejorable. Pero sirve para entender como funciona.
+            Notese que hacen practicamente lo mismo, solo que el que usa callback espera ese segundo que le decimos que tiene que esperar antes de llamar a la funcion porDos..
+    -->
+        <input type="number" id="numero">
+        <button onclick="cuenta()">Calcular</button>
+        <button onclick="cuentasincallback()">Calcular sin callback</button>
+        <div id="resultado"></div>
+    </body>
+</html>
