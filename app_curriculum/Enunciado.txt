@@ -1,0 +1,7 @@
+Empresa
+Fecha Inicio
+Fecha Fin
+Cargo
+Localizacion
+
+añadir JSON  -> TextArea

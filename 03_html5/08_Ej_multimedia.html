@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="ISO-8859-1">
+    <meta name="description" content="Ejemplo HTML5">
+    <meta name="keywords" content="HTML5, CSS3, JavaScript">
+    <title>Ejemplos Multimedia</title>
+</head>
+
+<body>
+    <header>
+        <h1>
+            Multimedia con HTML5
+        </h1>
+    </header>
+
+    <section>
+        <article>
+            <video id="video" controls autoplay loop>
+                <source src="http://videos.mozilla.org/firefox/3.5/overview/overview.ogv" type="video/ogg">
+                <p>Tu navegador no implementa el elemento <code>video</code>.</p>
+            </video>
+        </article>
+
+        <input type="button" value="probar" onclick="probar()" /><br/>
+
+        <article>
+            <audio id="audio" controls autoplay loop>
+                <source src="http://www.htmlya.com.ar/html5/simulador/gallo.mp3">
+                <source src="http://www.htmlya.com.ar/html5/simulador/gallo.ogg">
+                <source src="http://www.htmlya.com.ar/html5/simulador/gallo.wav">
+                <p>Tu navegador no implementa el elemento audio</p>
+            </audio>
+        </article>
+
+    </section>
+
+
+</body>
+
+<script type="text/javascript">
+    function probar() {
+        var mediaElement = document.getElementById("video");
+        mediaElement.pause();
+        alert("Video pausado.");
+        //mediaElement.src = "";
+        mediaElement.seekable.start(); // Returns the starting time (in seconds)
+        mediaElement.volume = 0;
+        alert("Ahora reproducimos y bajo el volumen");
+        mediaElement.seekable.end(); // Returns the ending time (in seconds)
+        alert("Saltar al minuto 2");
+        mediaElement.currentTime = 122; // Seek to 122 seconds
+        mediaElement.played.end(); // Returns the number of seconds the browser has played
+        alert("Tiempo de inicio : " + mediaElement.seekable.start(0));
+        alert("Tiempo de fin : " + mediaElement.seekable.end(0));
+    }
+</script>
+
+</html>

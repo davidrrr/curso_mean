@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<HTML lang="es">
+
+<HEAD>
+    <meta charset="UTF-8">
+    <meta name="description" content="Ejemplo HTML5">
+    <meta name="keywords" content="HTML5, CSS3, JavaScript">
+    <TITLE>
+        Curriculum Vitae
+    </TITLE>
+    <link rel="stylesheet" href="misestilos.css">
+</HEAD>
+
+
+<BODY>
+    <header>
+        <h1> Formulario Curriculum </h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li> Principal </li>
+            <li> Formaci�n </li>
+            <li> Experiencia </li>
+            <li> Contacto </li>
+        </ul>
+    </nav>
+
+    <section>
+        <form name="formulario" onsubmit="return ValidaCampos(this)">
+            Empresa: <input type="text" name="empresa" />
+            <br/> Cargo: <input type="text" name="cargo" />
+            <br/> Fecha Inicio: <input type="date" name="inicio" />
+            <br/> Fecha Fin: <input type="date" name="fin" />
+            <br/> Localizacion: <input type="text" name="loc" />
+            <br/> JSON: <input type="text" name="loc" />
+            <br/> Experiencia: <input type="submit" value="Cargar y mostrar" name="cargar" />
+        </form>
+    </section>
+
+    <footer>
+        <small><a href="aviso_legal.html"> Derechos reservados &copy;  2016-2017 </a></small>
+    </footer>
+
+</BODY>
+
+</HTML>

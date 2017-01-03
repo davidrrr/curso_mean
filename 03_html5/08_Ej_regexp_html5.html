@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="ISO-8859-1">
+    <meta name="description" content="Ejemplo HTML5">
+    <meta name="keywords" content="HTML5, CSS3, JavaScript">
+    <title>EJEMPLOS REGEXP</title>
+</head>
+
+<body>
+    <header>
+        <h1>
+            Validacion con Expresiones Regulares
+        </h1>
+    </header>
+    <form id="formulario" onsubmit="<script type='text/javascript'> return ValidaCampos(this) </script>">
+
+        <script type="text/javascript">
+            function ValidaCampos(formulario) {
+                var regex_tel = new REGEXP("^[1-9]{1}\d{8}$"); // 9 digitos
+                var regex_dni = new REGEXP("^\d{8}[A-Z]{1}$"); //8 digitos + 1 caracter
+
+                if (regex_dni.test(formulario.dni.value) == false) {
+                    alert("Campo DNI no válido");
+                    return false;
+                }
+                if (regex_tel.test(formulario.tlf.value) == false) {
+                    alert("Campo TELEFONO no válido");
+                    return false;
+                }
+            }
+        </script>
+
+        <div id="rosa">
+            <p>DNI: <input type="text" name="dni" /></p>
+            <p>Telefono: <input type="text" name="tlf" /> </p>
+        </div>
+        <p><input type="submit" value="enviar"></p>
+    </form>
+</body>
+
+</html>

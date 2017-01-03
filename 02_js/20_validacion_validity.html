@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="ISO-8859-1">
+    <meta name="description" content="Ejemplo HTML5">
+    <meta name="keywords" content="HTML5, CSS3, JavaScript">
+    <title>EJEMPLOS REGEXP</title>
+</head>
+
+<body>
+    <header>
+        <h1>
+            Validación con expresiones regulares
+        </h1>
+    </header>
+    <section>
+        <form name="formulario" onsubmit="return ValidaCampos(this)">
+            DNI: <input type="text" name="dni" size="9" />
+            <br/> Telefono: <input type="text" name="tlf" size="9" maxlength="9" />
+            <br/> Mensaje: <input type="text" name="mensaje" />
+            <br/> Email: <input type="text" name="mail" oninvalid="validacionPersonalizadaEmail(this)" />
+            <br/>
+            <input type="submit" value="Enviar" name="enviar" />
+        </form>
+    </section>
+</body>
+
+
+
+<script type="text/javascript">
+    function ValidaCampos(formulario) {
+        var regex_tel = /^[5-9]\d{8}$/; // 9 digitos
+        var regex_dni = /^\d{8}[A-Z]{1}$/; //8 digitos + 1 caracter
+        var regex_mensaje = /^\w+$/; // 1 o más caracteres
+        var regex_mail = /[\w-\.]{3,}@([\w-]{2,}\.)*([\w-]{2,}\.)[\w-]{2,4}/; // Email
+
+        if (regex_dni.test(formulario.dni.value) == false) {
+            alert("Campo DNI no válido");
+            return false;
+        }
+        if (regex_tel.test(formulario.tlf.value) == false) {
+            alert("Campo TELEFONO no válido");
+            return false;
+        }
+        if (regex_mensaje.test(formulario.mensaje.value) == false) {
+            alert("Campo MENSAJE no válido");
+            return false;
+        }
+        alert("Gracias por rellenarlo correctamente");
+        return true;
+    }
+
+    function validacionPersonalizadaEmail(input) {
+        if (regex_mail.test(formulario.mail.value) == false) {
+            alert("Campo EMAIL no válido");
+            return false;
+        }
+        return true;
+    }
+</script>
+
+</html>
