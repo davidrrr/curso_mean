@@ -9,6 +9,45 @@
         Curriculum Vitae
     </TITLE>
     <link rel="stylesheet" href="misestilos.css">
+
+    <script type="text/javascript">
+        function guardar() {
+            /*Captura de datos escrito en los inputs*/
+            var empresa = document.getElementById("empresa").value;
+            var cargo = document.getElementById("cargo").value;
+            var inicio = document.getElementById("inicio").value;
+            var fin = document.getElementById("fin").value;
+            var loc = document.getElementById("locat").value;
+            alert("Empresa: " + empresa + " Cargo: " + cargo + " Loc: " + loc);
+            /*Guardando los datos en el LocalStorage*/
+            localStorage.setItem("Empresa", empresa);
+            localStorage.setItem("Cargo", cargo);
+            localStorage.setItem("Inicio", inicio);
+            localStorage.setItem("Fin", fin);
+            localStorage.setItem("Loc", loc);
+            /*Limpiando los campos o inputs*/
+            document.getElementById("empresa").value = "";
+            document.getElementById("cargo").value = "";
+            document.getElementById("inicio").value = "";
+            document.getElementById("fin").value = "";
+            document.getElementById("locat").value = "";
+        }
+
+        function cargar() {
+            /*Obtener datos almacenados*/
+            var emp = localStorage.getItem("Empresa");
+            var cargo = localStorage.getItem("Cargo");
+            var ini = localStorage.getItem("Inicio");
+            var fin = localStorage.getItem("Fin");
+            var loc = localStorage.getItem("Loc");
+            /*Mostrar datos almacenados*/
+            document.getElementById("emp").innerHTML = emp;
+            document.getElementById("carg").innerHTML = cargo;
+            document.getElementById("ini").innerHTML = ini;
+            document.getElementById("f").innerHTML = fin;
+            document.getElementById("loc").innerHTML = loc;
+        }
+    </script>
 </HEAD>
 
 
@@ -20,24 +59,30 @@
     <nav>
         <ul>
             <li> Principal </li>
-            <li> Formaci�n </li>
+            <li> Formacion </li>
             <li> Experiencia </li>
             <li> Contacto </li>
         </ul>
     </nav>
-
+    <br />
     <section>
-        <form name="formulario" onsubmit="return ValidaCampos(this)">
-            Empresa: <input type="text" name="empresa" />
-            <br/> Cargo: <input type="text" name="cargo" />
-            <br/> Fecha Inicio: <input type="date" name="inicio" />
-            <br/> Fecha Fin: <input type="date" name="fin" />
-            <br/> Localizacion: <input type="text" name="loc" />
-            <br/> JSON: <input type="text" name="loc" />
-            <br/> Experiencia: <input type="submit" value="Cargar y mostrar" name="cargar" />
+        <form name="formulario" onsubmit="guardar()">
+            Empresa: <input type="text" id="empresa" />
+            <br/> Cargo: <input type="text" id="cargo" />
+            <br/> Fecha Inicio: <input type="date" id="inicio" />
+            <br/> Fecha Fin: <input type="date" id="fin" />
+            <br/> Localizacion: <input type="text" id="locat" />
+            <input type="submit" value="Añadir" name="add" />
         </form>
+        <br/> JSON:
+        <br/> <textarea name="json"> </textarea>
+        <br/> Experiencia:
+        <br/> <label type="text" id="emp"> </label> <label type="text" id="carg"> </label>
+        <label type="text" id="ini"> </label> <label type="text" id="f"> </label> <label type="text" id="loc"> </label>
+        <br/>
     </section>
-
+    <br/>
+    <br/>
     <footer>
         <small><a href="aviso_legal.html"> Derechos reservados &copy;  2016-2017 </a></small>
     </footer>

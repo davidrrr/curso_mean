@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title> LocalStorage</title>
+    <script type="text/javascript">
+        function guardar() {
+            /*Captura de datos escrito en los inputs*/
+            var nom = document.getElementById("nombre").value;
+            var apel = document.getElementById("apellido").value;
+            alert("Nombre " + nom + "Apellido " + apel);
+            /*Guardando los datos en el LocalStorage*/
+            localStorage.setItem("Nombre", nom);
+            localStorage.setItem("Apellido", apel);
+            /*Limpiando los campos o inputs*/
+            document.getElementById("nombre").value = "";
+            document.getElementById("apellido").value = "";
+        }
+
+        function cargar() {
+            /*Obtener datos almacenados*/
+            var nombre = localStorage.getItem("Nombre");
+            var apellido = localStorage.getItem("Apellido");
+            /*Mostrar datos almacenados*/
+            document.getElementById("lnombre").innerHTML = nombre;
+            document.getElementById("lapellido").innerHTML = apellido;
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>Ejemplo localStorage</h1>
+    </header>
+    <hr />
+
+    <input type="text" id="nombre" />
+    <input type="text" id="apellido" />
+    <input type="button" id="btnGuardar" value="guardar" onclick="guardar()" />
+
+    <hr />
+    <br /> Nombre Almacenado: <label type="text" id="lnombre"></label> Apellido almacenado: <label type="text" id="lapellido"></label>
+    <input type="button" value="Cargar elementos" id="btnCargar" onclick="cargar()">
+
+</body>
+
+</html>
