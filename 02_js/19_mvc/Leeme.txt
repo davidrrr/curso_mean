@@ -1,0 +1,27 @@
+
+Vista:
+- mostrarVolumen(volumen);
+- mostrarArea(area);
+- mostrarPerimetro(perimetro);
+
+
+Controlador:
+- calcularVolumen(x, y, z);
+- calcularArea(an, al);
+- calcularPerimetro(an, al);
+
+
+Modelo:
+
+- calcularDeVerdadVolumen(x, y, z);
+- calcularDeVerdadArea(an, al);
+- calcularDeVerdadPerimetro(an, al);
+
+
+
+
+
+Motor -> creadorDOM{ addinput() y button() }       Vista -> constructor pulsarcalculararea()    
+
+
+Controlador -> calculaArea()         Modelo -> calculaDeVerdadArea()
