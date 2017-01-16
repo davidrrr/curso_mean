@@ -3,7 +3,7 @@ $(document).ready(initializeEvents);
 function initializeEvents() {
     $("#boton1").click(hideBox);
     $("#boton2").click(showBox);
-    $("div").click(hideBox);
+    $("div div").click(hideDiv);
 }
 
 function hideBox() {
@@ -15,6 +15,6 @@ function showBox() {
 }
 
 function hideDiv() {
-    $("#descripcion").children().click().hide("slow");
-    //$("div").click.hide("slow");
+    //$("#descripcion").children().click().hide("slow");
+    $(this).hide("slow");
 }
