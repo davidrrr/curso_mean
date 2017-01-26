@@ -24,7 +24,7 @@ function ControladorHabitacion() {
 function ControladorReservas() {
     this.lista = Modelo.Reservas.lista;
 
-    this.ListaReservaDia(fecha) {
+    this.ListaReservaDia(fecha){
         var reservasDia = [];
         for (i = 0; i < Modelo.Reservas.lista.length; i++) {
             var encontrado = false;
