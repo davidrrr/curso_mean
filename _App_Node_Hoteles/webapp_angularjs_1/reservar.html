@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html data-ng-app="habitaciones">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Node Hoteles Group</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="col-xs-12">
+            <a href="/index.html"> <img src="images/logo.png" class="img-responsive col-xs-3" /> </a>
+            <h1 class="text-success">Bienvenido a Node Hoteles</h1>
+        </header>
+
+        <nav>
+            <ul class="list-inline text-center">
+                <li class="btn active"> <a href="/index.html"> Inicio </a> </li>
+                <li class="btn active"> <a href="reservar.html"> Reservar </a></li>
+                <li class="btn active"> <a href="admin.html"> Admin </a></li>
+                <li class="btn active"> <a href="contacto.html"> Contacto </a></li>
+            </ul>
+        </nav>
+
+        <form role="form">
+            <div>
+                <label for="lnombre">Nombre: </label>
+                <input type="text" class="form-control" id="nombre" placeholder="Introduzca Nombre" />
+            </div>
+            <div>
+                <label for="linicio">Fecha Inicio: </label>
+                <input type="date" class="form-control" id="incio" placeholder="Introduzca Fecha inicio" />
+            </div>
+            <div>
+                <label for="lfin">Fecha Fin: </label>
+                <input type="date" class="form-control" id="fin" placeholder="Introduzca Fecha fin" />
+            </div>
+
+        </form>
+
+
+        <!-- Añadimos controlador en el div -->
+        <div data-ng-controller="HabitacionesController as HsC">
+            <h2>Habitaciones</h2>
+            <h3>Cantidad: {{ HsC.cantidad() }}</h3>
+            <!-- Campo de texto para introducir datos de la habitación -->
+            <!-- Añadimos controlador en el div -->
+            <div data-ng-controller="HabitacionController as HC">
+                <!-- Campo de texto para introducir datos de la habitación -->
+                Numero: <input type="number" data-ng-model="HC.numero" value="1" /> Doble: <input type="checkbox" data-ng-model="HC.doble" value="false" />
+                <input type="button" value="+" ng-click="HC.addHabitacion()" />
+            </div>
+            <ul>
+                <li data-ng-repeat="habitacion in HsC.lista">
+                    Nº {{ habitacion.numero}}: {{ habitacion.doble ? "Doble" : "Simple"}}
+                    <input type="button" value="X" ng-click="HsC.delHabitacion(habitacion.numero)" />
+                </li>
+            </ul>
+        </div>
+
+        <!--
+        <div data-ng-controller="ReservasController as RsC">
+            <h3>
+                Listado de Reservas por Dia
+            </h3>
+        </div>
+        -->
+        <footer class="bottom col-xs-12">
+            <h5><a href="aviso_legal.html"> Derechos reservados &copy;  2016-2017 </a></h5>
+        </footer>
+
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+<script src="js/modelo.js"></script>
+<script src="js/habitaciones.js"></script>
+
+</html>
