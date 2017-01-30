@@ -2,38 +2,85 @@
 
 <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title> Node Hoteles Group</title>
-    <link rel="stylesheet" href="scripts/bootstrap-3.3.6-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="css/bootstrap-datetimepicker.css" rel="stylesheet">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.js"></script>
+    <script src="js/bootstrap-datetimepicker.js"></script>
 </head>
 
 <body>
-    <!-- Añadimos controlador en el div -->
-    <div data-ng-controller="HabitacionesController as HsC">
-        <h2>Habitaciones</h2>
-        <h3>Cantidad: {{ HsC.cantidad() }}</h3>
-        <!-- Campo de texto para introducir datos de la habitación -->
-        <!-- Añadimos controlador en el div -->
-        <div data-ng-controller="HabitacionController as HC">
-            <!-- Campo de texto para introducir datos de la habitación -->
-            Numero: <input type="number" data-ng-model="HC.numero" value="1" /> Doble: <input type="checkbox" data-ng-model="HC.doble" value="false" />
-            <input type="button" value="+" ng-click="HC.addHabitacion()" />
+    <div class="container bg-success">
+
+        <header class="col-xs-12">
+            <a href="index.html"> <img src="images/logo.png" class="img-responsive col-xs-3" /> </a>
+            <h1 class="text-success">Bienvenido a Node Hoteles</h1>
+        </header>
+
+        <nav>
+            <ul class="list-inline text-center">
+                <li class="btn btn-warning"> <a href="index.html"> Inicio </a> </li>
+                <li class="btn btn-warning"> <a href="reservar.html"> Reservar </a></li>
+                <li class="btn btn-warning"> <a href="admin.html"> Admin </a></li>
+                <li class="btn btn-warning"> <a href="contacto.html"> Contacto </a></li>
+            </ul>
+        </nav>
+
+        <section>
+            <h2>Calendarios</h2>
+       
+        <div class="container ">
+            <div class="col-md-5">
+                <div class="form-group">
+                    <div class="input-group date" id="datetimepicker1">
+                        <input type="text" class="form-control" />
+                        <span class="input-group-addon">
+						<span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="form-group">
+                    <div class="input-group date" id="datetimepicker2">
+                        <input type="text" class="form-control" />
+                        <span class="input-group-addon">
+						<span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
         </div>
-        <ul>
-            <li data-ng-repeat="habitacion in HsC.lista">
-                Nº {{ habitacion.numero}}: {{ habitacion.doble ? "Doble" : "Simple"}}
-                <input type="button" value="X" ng-click="HsC.delHabitacion(habitacion.numero)" />
-            </li>
-        </ul>
-    </div>
+        <script type="text/javascript">
+            $(function() {
+                $("#datetimepicker1").datetimepicker();
+                $("#datetimepicker2").datetimepicker({
+                    useCurrent: false //Important! See issue #1075
+                });
+                $("#datetimepicker1").on("dp.change", function(e) {
+                    $('#datetimepicker2').data("DateTimePicker").minDate(e.date);
+                });
+                $("#datetimepicker2").on("dp.change", function(e) {
+                    $("#datetimepicker1").data("DateTimePicker").maxDate(e.date);
+                });
+            });
+        </script>
 
-    </div>
-
-    <div data-ng-controller="ReservasController as RsC">
-        <h1>
-            Listado de Reservas por Dia
-        </h1>
+        
+        
 
 
+
+
+        </section>
+
+        <footer class="bottom col-xs-12 text-center">
+            <h5><a href="aviso_legal.html"> Derechos reservados &copy;  2016-2017 </a></h5>
+        </footer>
     </div>
 
 </body>
