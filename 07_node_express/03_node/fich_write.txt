@@ -1,0 +1,7 @@
+Usar la entrada est�ndar process.stdin
+? Comenzamos con la configuraci�n de la
+entrada de datos por consola.
+� process.stdin.setEncoding('utf8');
+? Luego podemos mostrar un mensaje en la
+consola para que se sepa qu� dato se est�
+solicitando al usuario.
