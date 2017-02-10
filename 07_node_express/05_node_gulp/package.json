@@ -1,0 +1,19 @@
+{
+  "name": "05_node_gulp",
+  "version": "1.0.0",
+  "description": "Primeros pasos Gulp",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Deivid",
+  "license": "MIT",
+  "devDependencies": {
+    "browserify": "^14.0.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-uglify": "^2.0.1",
+    "reactify": "^1.1.1",
+    "vinyl-source-stream": "^1.1.0"
+  }
+}
