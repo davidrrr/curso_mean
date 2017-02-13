@@ -1,7 +1,13 @@
 var http = require("http");
 var bl = require("bl");
+var fs = require("fs");
+
+let streamEscritura = fs.createWriteStream("google.html");
 
 http.get("http://www.google.es", (res) => {
+
+    res.pipe(streamEscritura);
+
     res.pipe(
         bl((error, datos) => {
             console.log("Algo ha recibido");
@@ -14,5 +20,5 @@ http.get("http://www.google.es", (res) => {
                 console.log("Datos: \n" + datosStr);
             }
         })
-    );
+    ).pipe(streamEscritura);
 });
