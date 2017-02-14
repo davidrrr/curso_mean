@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<HTML lang="es">
+
+<HEAD>
+    <meta charset="UTF-8">
+    <TITLE>
+        Mi primera Página
+    </TITLE>
+</HEAD>
+
+
+<BODY>
+
+
+</BODY>
+
+<script>
+
+function haceAlgo(callbackPaso1, callbackPaso2, callbackTermino){
+    //algo aca
+    callbackPaso1('paso 1');
+
+    //sigo... algo aca
+    callbackPaso2('paso 2');
+
+    //sigo ... y termino
+    callbackTermino('terminó');
+}
+
+function paso1(quePaso){
+     console.log(quePaso);
+}
+
+function paso2(quePaso){
+     console.log(quePaso);
+}
+
+function termino(queHizo){
+     console.log(queHizo);
+}
+
+haceAlgo(paso1, paso2, termino);
+	
+</script>
+
+</HTML>
