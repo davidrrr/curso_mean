@@ -16,6 +16,7 @@ function funcionIntermedia(request, response, next) {
 function funcionInterFin(request, response, next) {
     console.log("Inter ejecutando a las: " + new Date());
     response.send("Fin");
+    next();
 }
 
 app.get("/concatenando",

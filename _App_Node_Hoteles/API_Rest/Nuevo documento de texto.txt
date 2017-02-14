@@ -1,0 +1,20 @@
+C:\Users\tarde\Documents\curso_mean\_App_Node_Hoteles\API_Rest\appreservas>npm i
+nstall express-generator -g
+
+
+C:\Users\tarde\Documents\curso_mean\_App_Node_Hoteles\API_Rest\appreservas>expre
+ss --view=jade appreservas
+
+
+C:\Users\tarde\Documents\curso_mean\_App_Node_Hoteles\API_Rest\appreservas>npm i
+nstall
+
+
+C:\Users\tarde\Documents\curso_mean\_App_Node_Hoteles\API_Rest\appreservas>set D
+EBUG=appreservas:* & npm start
+
+
+C:\Users\tarde\Documents\curso_mean\_App_Node_Hoteles\API_Rest\appreservas>npm i
+nstall mongodb --save-dev
+
+mmc devmgmt.msc
