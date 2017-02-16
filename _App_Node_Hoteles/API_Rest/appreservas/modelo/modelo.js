@@ -87,6 +87,6 @@ modelo.acceder("insertarBase", (datosInsertados) => {
         { cliente: "Otro", habitacion: 1 },
         { cliente: "Manu", habitacion: 1 }
     ]
-})
+});
 
 module.exports = modelo;
