@@ -1,59 +1,52 @@
-// tsc --noEmitOnError -w 02_clases.ts
-class Persona{
-    nombre: string;
-    apellido1: string;
-    apellido2: string;
+// Definiciones de clases
 
-    constructor(nombre: string, apellido1: string, apellido2: string){
-        this.nombre= nombre;
-        this.apellido1= apellido1;
-        this.apellido2= apellido2;
+class Persona {
+    // Definicion de atributos
+    nombre :string;
+    apellido1 :string;
+    apellido2 :string;
+    // Metodo constructor
+    constructor(nombre :string, apellido1 :string, apellido2 :string){
+        this.nombre = nombre;
+        this.apellido1 = apellido1;
+        this.apellido2 = apellido2;
     }
-
-    stringify(): string{
-        return this.nombre + " " + this.apellido1 + " "+ this.apellido2;
-    }
-
-    stringify2(): any{
-        // return this.nombre + " " + this.apellido1;
-        return false;
-    }
-
+    stringify():string{
+        return this.nombre + " " + this.apellido1 + " " + this.apellido2;
+    }    
 }
+// Sin metodo constructor
+/*let ruben = new Persona();
+ruben.nombre = "Ruben";
+ruben.apellido1 = "Gomez";
+ruben.apellido2 = "Garcia";*/
+// Con metodo constructor
+let ruben = new Persona( "Ruben","Gomez","Garcia");
+console.log(ruben.stringify());
 
+// EJERCICIO: Crea dos objetos Persona más, cada uno con las maneras anteriores, e imprimelos
+let luis = new Persona("Luis","Perez","Garcia");
+let alberto = new Persona("Alberto","Gomez","Gonzalez");
+console.log(luis.stringify());
+console.log(alberto.stringify());
 
-let german = new Persona("German", "Caballero", "Rodriguez");
-console.log(german.stringify());
-
-class Ciudadano extends Persona{
+// Herencia!
+class Ciudadano extends Persona {
     identidad: string;
-
-    constructor(nombre: string = "", ape1: string ="", ape2: string= null, identidad: string){
-        super(nombre, ape1, ape2);
-        this.identidad=identidad;
+    constructor(nombre :string,apellido1 :string, apellido2 :string, identidad :string){
+        super(nombre,apellido1,apellido2);
+        this.identidad = identidad;
     }
-// Otro constructor que reciba sólo identidad, y el resto lo asigne a nulo
-// sobreescribir la function stringfy que imprima lo mismo, usando la funcion padre y la identidad
-/*
-    constructor(identidad: string){
-        super(null, null, null);
-        this.identidad=identidad;
-    }
-*/ // No permite sobreescribir el constructor
-
-stringify(): string{
-        return super.stringify() + " "+this.identidad;
-    }
-
+    /*constructor(identidad :string){
+        super(null,null,null);
+        this.identidad = identidad;
+    }*/
+    // EJERCICIO: Crea un metodo que devuelva el stringify del padre e identidad, y usalo en un objeto ciudadanoKane
+    stringify(): string{
+        return super.stringify() + " " + this.identidad;
+    }    
 }
-// Crear dos objetos tipo Ciudadano y mostrar con stringify
-
-let alguien = new Ciudadano("Pepito", "Grillo", "ooo", "3");
-
-let alguien2: Ciudadano = new Ciudadano(null, null, null, "5");
-
-console.log(alguien.stringify());
-console.log(alguien2.stringify());
-
-//let alguien3: Ciudadano = new Persona("null","ooo", "jj");
-let alguien3: Persona = new Ciudadano(null, null, null, "8");
+var ciudadanoKane = new Ciudadano("Ruben","Gomez","Garcia","1");
+console.log(ciudadanoKane.stringify());
+var otraPersona: Persona = ciudadanoKane;
+console.log(otraPersona.stringify());
