@@ -1,3 +1,13 @@
 <h1>
-  {{title}}
+
+    <input type="button" (click)="haceClick()" value="Pulsa!">
+    <input type="button" (click)="menssajes=[]" value="Limpiar">
+    <input [(ngModel)]="title"> {{title}}
+    <br />
+    <ul>
+        <li>
+            *ngFor="let mensaje of mensajes" {{mensaje}}
+        </li>
+    </ul>
+
 </h1>
