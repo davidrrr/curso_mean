@@ -14,5 +14,8 @@
     "mongoose": "^4.8.4",
     "morgan": "~1.7.0",
     "serve-favicon": "~2.3.2"
+  },
+  "devDependencies": {
+    "rxjs": "^5.2.0"
   }
 }
